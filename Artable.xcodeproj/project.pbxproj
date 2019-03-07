@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		790668182230CFAB0027C556 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7962FEC72230CD9400BFEE78 /* Assets.xcassets */; };
 		7962FEC12230CD9300BFEE78 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7962FEC02230CD9300BFEE78 /* AppDelegate.swift */; };
 		7962FEC32230CD9300BFEE78 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7962FEC22230CD9300BFEE78 /* ViewController.swift */; };
 		7962FEC62230CD9300BFEE78 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7962FEC42230CD9300BFEE78 /* Main.storyboard */; };
@@ -15,7 +16,6 @@
 		7962FED92230CDAF00BFEE78 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7962FED82230CDAF00BFEE78 /* AppDelegate.swift */; };
 		7962FEDB2230CDAF00BFEE78 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7962FEDA2230CDAF00BFEE78 /* ViewController.swift */; };
 		7962FEDE2230CDAF00BFEE78 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7962FEDC2230CDAF00BFEE78 /* Main.storyboard */; };
-		7962FEE02230CDAF00BFEE78 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7962FEDF2230CDAF00BFEE78 /* Assets.xcassets */; };
 		7962FEE32230CDAF00BFEE78 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7962FEE12230CDAF00BFEE78 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -31,7 +31,6 @@
 		7962FED82230CDAF00BFEE78 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7962FEDA2230CDAF00BFEE78 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		7962FEDD2230CDAF00BFEE78 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		7962FEDF2230CDAF00BFEE78 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7962FEE22230CDAF00BFEE78 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7962FEE42230CDAF00BFEE78 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -54,9 +53,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		790668172230CF950027C556 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				7962FEC72230CD9400BFEE78 /* Assets.xcassets */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
 		7962FEB42230CD9300BFEE78 = {
 			isa = PBXGroup;
 			children = (
+				790668172230CF950027C556 /* Shared */,
 				7962FEBF2230CD9300BFEE78 /* Artable */,
 				7962FED72230CDAF00BFEE78 /* ArtableAdmin */,
 				7962FEBE2230CD9300BFEE78 /* Products */,
@@ -78,7 +86,6 @@
 				7962FEC02230CD9300BFEE78 /* AppDelegate.swift */,
 				7962FEC22230CD9300BFEE78 /* ViewController.swift */,
 				7962FEC42230CD9300BFEE78 /* Main.storyboard */,
-				7962FEC72230CD9400BFEE78 /* Assets.xcassets */,
 				7962FEC92230CD9400BFEE78 /* LaunchScreen.storyboard */,
 				7962FECC2230CD9400BFEE78 /* Info.plist */,
 			);
@@ -91,7 +98,6 @@
 				7962FED82230CDAF00BFEE78 /* AppDelegate.swift */,
 				7962FEDA2230CDAF00BFEE78 /* ViewController.swift */,
 				7962FEDC2230CDAF00BFEE78 /* Main.storyboard */,
-				7962FEDF2230CDAF00BFEE78 /* Assets.xcassets */,
 				7962FEE12230CDAF00BFEE78 /* LaunchScreen.storyboard */,
 				7962FEE42230CDAF00BFEE78 /* Info.plist */,
 			);
@@ -188,7 +194,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7962FEE32230CDAF00BFEE78 /* LaunchScreen.storyboard in Resources */,
-				7962FEE02230CDAF00BFEE78 /* Assets.xcassets in Resources */,
+				790668182230CFAB0027C556 /* Assets.xcassets in Resources */,
 				7962FEDE2230CDAF00BFEE78 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
