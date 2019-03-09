@@ -46,7 +46,7 @@
                                         </constraints>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" textContentType="password"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e1r-JP-gNM">
                                         <rect key="frame" x="0.0" y="138.33333333333334" width="335" height="29"/>
@@ -54,6 +54,9 @@
                                         <state key="normal" title="Forgot password?">
                                             <color key="titleColor" red="0.83529411764705885" green="0.39215686274509803" blue="0.31372549019607843" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="forgotPasswordClicked:" destination="Iaw-gq-nGv" eventType="touchUpInside" id="rYU-JM-Qb9"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yO7-8Z-kAC" customClass="RoundedButton" customModule="Artable" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="179.33333333333331" width="335" height="40"/>
@@ -65,6 +68,9 @@
                                         <state key="normal" title="Login">
                                             <color key="titleColor" red="0.95294117647058818" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="loginClicked:" destination="Iaw-gq-nGv" eventType="touchUpInside" id="07n-Ya-9jd"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zBs-fV-5EO" customClass="RoundedButton" customModule="Artable" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="231.33333333333331" width="335" height="40"/>
@@ -90,6 +96,9 @@
                                         <state key="normal" title="Continue as guest">
                                             <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="guestClicked:" destination="Iaw-gq-nGv" eventType="touchUpInside" id="9cE-YX-4uc"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -113,6 +122,11 @@
                         <viewLayoutGuide key="safeArea" id="51d-fp-85x"/>
                     </view>
                     <navigationItem key="navigationItem" id="mDL-fl-Cf1"/>
+                    <connections>
+                        <outlet property="emailTxt" destination="cOu-XK-BM2" id="IVs-Eo-Hk0"/>
+                        <outlet property="passwordTxt" destination="vK0-eT-Ljg" id="FvF-yv-RQc"/>
+                        <outlet property="spinner" destination="I6f-dc-GWN" id="bzf-SU-D2o"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2vi-P2-7mO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
