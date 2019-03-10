@@ -16,11 +16,12 @@ class HomeVC: UIViewController {
     @IBOutlet weak var spinner: UIActivityIndicatorView!
     
     var categories = [Category]()
+    var selectedCategory: Category!
+    var db: Firestore!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let cat = Category.init(name: "q", id: "1", imageUrl: "https://hi.org/sn_uploads/Campagne/Olivier.jpg", isActive: true, timeStamp: Timestamp())
-        categories.append(cat)
+        db = Firestore.firestore()
         
         collectionView.delegate = self
         collectionView.dataSource = self
@@ -34,6 +35,8 @@ class HomeVC: UIViewController {
                 }
             }
         }
+        
+        fetchCollection()
         }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -41,6 +44,34 @@ class HomeVC: UIViewController {
             loginLogoutBtn.title = "Logout"
         } else {
             loginLogoutBtn.title = "Login"
+        }
+    }
+    
+    func fetchDocument() {
+        let docRef = db.collection("categories").document("N7H7WBXsJ2l3tLOpdwNO")
+        docRef.getDocument { (snap, error) in
+            if let error = error {
+                debugPrint(error)
+                return
+            }
+            
+            guard let data = snap?.data() else { return}
+            let newCategory = Category.init(data: data)
+            self.categories.append(newCategory)
+            self.collectionView.reloadData()
+        }
+    }
+    
+    func fetchCollection() {
+        let collectionRef = db.collection("categories")
+        collectionRef.getDocuments { (snap, error) in
+            guard let docs = snap?.documents else { return }
+            for doc in docs {
+                let data = doc.data()
+                let newCategory = Category.init(data: data)
+                self.categories.append(newCategory)
+            }
+            self.collectionView.reloadData()
         }
     }
 
@@ -90,9 +121,24 @@ extension HomeVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollec
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = view.frame.width
-        let cellWidth = (width - 50 ) / 2
+        let cellWidth = (width - 30 ) / 2
         let cellHeight = cellWidth * 1.5
         
         return CGSize(width: cellWidth, height: cellHeight)
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        selectedCategory = categories[indexPath.item]
+        performSegue(withIdentifier: Segues.ToProducts, sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == Segues.ToProducts {
+            if let destination = segue.destination as? ProductVC {
+                destination.category = selectedCategory
+            }
+        }
+    }
+    
+    
 }

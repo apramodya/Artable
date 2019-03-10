@@ -15,6 +15,10 @@
 		7934FDB72234A1B900D145DF /* ProductVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7934FDB62234A1B900D145DF /* ProductVC.swift */; };
 		7934FDB92234A25200D145DF /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7934FDB82234A25200D145DF /* Product.swift */; };
 		7934FDBA2234A25200D145DF /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7934FDB82234A25200D145DF /* Product.swift */; };
+		7934FDBD2234A34700D145DF /* ProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7934FDBB2234A34700D145DF /* ProductCell.swift */; };
+		7934FDBE2234A34700D145DF /* ProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7934FDBB2234A34700D145DF /* ProductCell.swift */; };
+		7934FDBF2234A34700D145DF /* ProductCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7934FDBC2234A34700D145DF /* ProductCell.xib */; };
+		7934FDC02234A34700D145DF /* ProductCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7934FDBC2234A34700D145DF /* ProductCell.xib */; };
 		79611551223391F200BC6AE6 /* ForgotPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7961154F223391F200BC6AE6 /* ForgotPasswordVC.swift */; };
 		79611552223391F200BC6AE6 /* ForgotPasswordVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79611550223391F200BC6AE6 /* ForgotPasswordVC.xib */; };
 		7962FEC12230CD9300BFEE78 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7962FEC02230CD9300BFEE78 /* AppDelegate.swift */; };
@@ -50,6 +54,8 @@
 		792E79C52232B16A00BD4DA8 /* RoundedViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedViews.swift; sourceTree = "<group>"; };
 		7934FDB62234A1B900D145DF /* ProductVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductVC.swift; sourceTree = "<group>"; };
 		7934FDB82234A25200D145DF /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		7934FDBB2234A34700D145DF /* ProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCell.swift; sourceTree = "<group>"; };
+		7934FDBC2234A34700D145DF /* ProductCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductCell.xib; sourceTree = "<group>"; };
 		7961154F223391F200BC6AE6 /* ForgotPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordVC.swift; sourceTree = "<group>"; };
 		79611550223391F200BC6AE6 /* ForgotPasswordVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ForgotPasswordVC.xib; sourceTree = "<group>"; };
 		7962FEBD2230CD9300BFEE78 /* Artable.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Artable.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -117,6 +123,7 @@
 			children = (
 				792E79C52232B16A00BD4DA8 /* RoundedViews.swift */,
 				79E84B9722341085003D3167 /* CategoryCell.swift */,
+				7934FDBB2234A34700D145DF /* ProductCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -193,8 +200,8 @@
 				79D3F66822317741008B89C5 /* LoginVC.swift */,
 				79D3F66A2231776A008B89C5 /* RegisterVC.swift */,
 				7962FEC22230CD9300BFEE78 /* HomeVC.swift */,
-				7962FEC02230CD9300BFEE78 /* AppDelegate.swift */,
 				7934FDB62234A1B900D145DF /* ProductVC.swift */,
+				7962FEC02230CD9300BFEE78 /* AppDelegate.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -229,6 +236,7 @@
 			isa = PBXGroup;
 			children = (
 				79E84B9822341085003D3167 /* CategoryCell.xib */,
+				7934FDBC2234A34700D145DF /* ProductCell.xib */,
 			);
 			path = Xibs;
 			sourceTree = "<group>";
@@ -339,6 +347,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7962FECB2230CD9400BFEE78 /* LaunchScreen.storyboard in Resources */,
+				7934FDBF2234A34700D145DF /* ProductCell.xib in Resources */,
 				79E84B9B22341085003D3167 /* CategoryCell.xib in Resources */,
 				7962FEC82230CD9400BFEE78 /* Assets.xcassets in Resources */,
 				79D3F66122316832008B89C5 /* GoogleService-Info.plist in Resources */,
@@ -355,6 +364,7 @@
 				79E84B9C22341085003D3167 /* CategoryCell.xib in Resources */,
 				7962FEE32230CDAF00BFEE78 /* LaunchScreen.storyboard in Resources */,
 				79D3F66322316B9B008B89C5 /* GoogleService-Info.plist in Resources */,
+				7934FDC02234A34700D145DF /* ProductCell.xib in Resources */,
 				790668182230CFAB0027C556 /* Assets.xcassets in Resources */,
 				7962FEDE2230CDAF00BFEE78 /* Main.storyboard in Resources */,
 			);
@@ -527,6 +537,7 @@
 				79E84B952233CFC1003D3167 /* Category.swift in Sources */,
 				797801B0223211FF005F10F8 /* Extensions.swift in Sources */,
 				7962FEC32230CD9300BFEE78 /* HomeVC.swift in Sources */,
+				7934FDBD2234A34700D145DF /* ProductCell.swift in Sources */,
 				79D3F66B2231776A008B89C5 /* RegisterVC.swift in Sources */,
 				7962FEC12230CD9300BFEE78 /* AppDelegate.swift in Sources */,
 				792E79C62232B16A00BD4DA8 /* RoundedViews.swift in Sources */,
@@ -547,6 +558,7 @@
 				7962FED92230CDAF00BFEE78 /* AppDelegate.swift in Sources */,
 				79E84B962233CFD4003D3167 /* Category.swift in Sources */,
 				79E84B9A22341085003D3167 /* CategoryCell.swift in Sources */,
+				7934FDBE2234A34700D145DF /* ProductCell.swift in Sources */,
 				7934FDBA2234A25200D145DF /* Product.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

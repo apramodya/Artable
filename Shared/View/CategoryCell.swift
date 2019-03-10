@@ -22,7 +22,9 @@ class CategoryCell: UICollectionViewCell {
     func configureCategory(category: Category) {
         categoryLbl.text = category.name
         if let url = URL(string: category.imageUrl) {
-            categoryImg.kf.setImage(with: url)
+            let placeholderImage = UIImage(named: "placeholder")
+            categoryImg.kf.indicatorType = .activity
+            categoryImg.kf.setImage(with: url, placeholder: placeholderImage, options: [.transition(.fade(0.2))])
         }
     }
 }

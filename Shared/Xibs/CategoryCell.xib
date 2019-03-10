@@ -19,25 +19,26 @@
                 <rect key="frame" x="0.0" y="0.0" width="150" height="200"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="aerial_1" translatesAutoresizingMaskIntoConstraints="NO" id="JjA-Uq-Fzq">
-                        <rect key="frame" x="0.0" y="0.0" width="150" height="162"/>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="aerial_1" translatesAutoresizingMaskIntoConstraints="NO" id="JjA-Uq-Fzq">
+                        <rect key="frame" x="0.0" y="0.0" width="150" height="161.5"/>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Category Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="2fW-C6-nq6">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="2fW-C6-nq6">
                         <rect key="frame" x="8" y="169.5" width="134" height="22.5"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
-                        <nil key="textColor"/>
+                        <color key="textColor" red="0.20392156859999999" green="0.28627450980000002" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
             </view>
             <constraints>
-                <constraint firstItem="2fW-C6-nq6" firstAttribute="top" secondItem="JjA-Uq-Fzq" secondAttribute="bottom" constant="8" id="5w3-Tx-RMq"/>
-                <constraint firstItem="JjA-Uq-Fzq" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="8ab-hI-o9d"/>
-                <constraint firstAttribute="bottom" secondItem="2fW-C6-nq6" secondAttribute="bottom" constant="8" id="DT9-MH-i4n"/>
-                <constraint firstAttribute="trailing" secondItem="JjA-Uq-Fzq" secondAttribute="trailing" id="FcJ-At-YCR"/>
-                <constraint firstAttribute="trailing" secondItem="2fW-C6-nq6" secondAttribute="trailing" constant="8" id="KnU-GR-RRK"/>
-                <constraint firstItem="JjA-Uq-Fzq" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Ma1-9t-rkH"/>
-                <constraint firstItem="2fW-C6-nq6" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="YrD-aH-Yai"/>
+                <constraint firstAttribute="trailing" secondItem="JjA-Uq-Fzq" secondAttribute="trailing" id="1sR-qo-qMF"/>
+                <constraint firstItem="2fW-C6-nq6" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="6qB-3M-8Ae"/>
+                <constraint firstItem="JjA-Uq-Fzq" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="KNn-4v-ujA"/>
+                <constraint firstItem="JjA-Uq-Fzq" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Rhg-zC-fb5"/>
+                <constraint firstAttribute="trailing" secondItem="2fW-C6-nq6" secondAttribute="trailing" constant="8" id="SkM-EA-MC2"/>
+                <constraint firstItem="2fW-C6-nq6" firstAttribute="top" secondItem="JjA-Uq-Fzq" secondAttribute="bottom" constant="8" id="d9O-Et-ZsX"/>
+                <constraint firstAttribute="bottom" secondItem="2fW-C6-nq6" secondAttribute="bottom" constant="8" id="th0-cj-EDS"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <connections>
