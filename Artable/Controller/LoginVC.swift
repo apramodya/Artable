@@ -19,11 +19,17 @@ class LoginVC: UIViewController {
     }
     
     @IBAction func forgotPasswordClicked(_ sender: Any) {
+        let vc = ForgotPasswordVC()
+        vc.modalTransitionStyle = .crossDissolve
+        vc.modalPresentationStyle = .overCurrentContext
+        present(vc, animated: true, completion: nil)
     }
     
     @IBAction func loginClicked(_ sender: Any) {
         guard let email = emailTxt.text, email.isNotEmpty,
-            let password = passwordTxt.text, password.isNotEmpty else { return}
+            let password = passwordTxt.text, password.isNotEmpty else {
+                simpleAlert(title: "Error", message: "Some fields are missing.")
+                return}
         
         spinner.startAnimating()
         
@@ -31,7 +37,7 @@ class LoginVC: UIViewController {
             
             if let error = error {
                 debugPrint(error)
-                self.handleFireAuthError(error: error)
+                Auth.auth().handleFireAuthError(error: error, vc: self)
                 self.spinner.stopAnimating()
                 return
             }
