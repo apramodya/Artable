@@ -18,5 +18,4 @@ struct Product {
     var imageUrl: String
     var timestamp: Timestamp
     var stock: Int
-    var favorite: Bool
 }
