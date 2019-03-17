@@ -13,6 +13,10 @@ extension Firestore {
     var categories: Query {
         return collection("categories").order(by: "timestamp", descending: true)
     }
+    
+    func products(category: Category) -> Query {
+        return collection("products").whereField("category", isEqualTo: category.id).order(by: "timestamp", descending: true)
+    }
 }
 
 extension Auth {

@@ -158,8 +158,7 @@ extension HomeVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollec
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Identifiers.categoryCell, for: indexPath) as? CategoryCell {
-            
+        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Identifiers.categoryCell, for: indexPath) as? CategoryCell {            
             cell.configureCategory(category: categories[indexPath.item])
             return cell
         }
