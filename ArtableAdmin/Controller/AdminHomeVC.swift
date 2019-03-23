@@ -21,7 +21,7 @@ class AdminHomeVC: HomeVC {
     }
 
     @objc func addCategory() {
-        
+        performSegue(withIdentifier: Segues.ToAddEditCategory, sender: self)
     }
 
 }
