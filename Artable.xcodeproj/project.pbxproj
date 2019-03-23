@@ -27,13 +27,20 @@
 		7962FEC82230CD9400BFEE78 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7962FEC72230CD9400BFEE78 /* Assets.xcassets */; };
 		7962FECB2230CD9400BFEE78 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7962FEC92230CD9400BFEE78 /* LaunchScreen.storyboard */; };
 		7962FED92230CDAF00BFEE78 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7962FED82230CDAF00BFEE78 /* AppDelegate.swift */; };
-		7962FEDB2230CDAF00BFEE78 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7962FEDA2230CDAF00BFEE78 /* ViewController.swift */; };
+		7962FEDB2230CDAF00BFEE78 /* AdminHomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7962FEDA2230CDAF00BFEE78 /* AdminHomeVC.swift */; };
 		7962FEDE2230CDAF00BFEE78 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7962FEDC2230CDAF00BFEE78 /* Main.storyboard */; };
 		7962FEE32230CDAF00BFEE78 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7962FEE12230CDAF00BFEE78 /* LaunchScreen.storyboard */; };
 		797801B0223211FF005F10F8 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797801AF223211FF005F10F8 /* Extensions.swift */; };
 		797801B222321C38005F10F8 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797801B122321C38005F10F8 /* Constants.swift */; };
 		7993FB60224637390053DF3C /* ProductDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7993FB5E224637390053DF3C /* ProductDetailVC.swift */; };
 		7993FB61224637390053DF3C /* ProductDetailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7993FB5F224637390053DF3C /* ProductDetailVC.xib */; };
+		7993FB62224648AC0053DF3C /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7962FEC22230CD9300BFEE78 /* HomeVC.swift */; };
+		7993FB6322464CE50053DF3C /* RoundedViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792E79C52232B16A00BD4DA8 /* RoundedViews.swift */; };
+		7993FB6422464CFA0053DF3C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797801B122321C38005F10F8 /* Constants.swift */; };
+		7993FB6522464CFF0053DF3C /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797801AF223211FF005F10F8 /* Extensions.swift */; };
+		7993FB6622464D420053DF3C /* ProductDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7993FB5E224637390053DF3C /* ProductDetailVC.swift */; };
+		7993FB6722464D590053DF3C /* ProductVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7934FDB62234A1B900D145DF /* ProductVC.swift */; };
+		7993FB6822464D850053DF3C /* ProductDetailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7993FB5F224637390053DF3C /* ProductDetailVC.xib */; };
 		79D3F66122316832008B89C5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 79D3F66022316831008B89C5 /* GoogleService-Info.plist */; };
 		79D3F66322316B9B008B89C5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 79D3F66222316B9B008B89C5 /* GoogleService-Info.plist */; };
 		79D3F66922317741008B89C5 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D3F66822317741008B89C5 /* LoginVC.swift */; };
@@ -69,7 +76,7 @@
 		7962FECC2230CD9400BFEE78 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7962FED62230CDAF00BFEE78 /* ArtableAdmin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ArtableAdmin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7962FED82230CDAF00BFEE78 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		7962FEDA2230CDAF00BFEE78 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		7962FEDA2230CDAF00BFEE78 /* AdminHomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminHomeVC.swift; sourceTree = "<group>"; };
 		7962FEDD2230CDAF00BFEE78 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7962FEE22230CDAF00BFEE78 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7962FEE42230CDAF00BFEE78 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -180,7 +187,7 @@
 			isa = PBXGroup;
 			children = (
 				7962FED82230CDAF00BFEE78 /* AppDelegate.swift */,
-				7962FEDA2230CDAF00BFEE78 /* ViewController.swift */,
+				7962FEDA2230CDAF00BFEE78 /* AdminHomeVC.swift */,
 				7962FEDC2230CDAF00BFEE78 /* Main.storyboard */,
 				7962FEE12230CDAF00BFEE78 /* LaunchScreen.storyboard */,
 				79D3F66222316B9B008B89C5 /* GoogleService-Info.plist */,
@@ -374,6 +381,7 @@
 				7934FDC02234A34700D145DF /* ProductCell.xib in Resources */,
 				790668182230CFAB0027C556 /* Assets.xcassets in Resources */,
 				7962FEDE2230CDAF00BFEE78 /* Main.storyboard in Resources */,
+				7993FB6822464D850053DF3C /* ProductDetailVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -562,11 +570,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				79E84B932233C094003D3167 /* Firebase+Utils.swift in Sources */,
-				7962FEDB2230CDAF00BFEE78 /* ViewController.swift in Sources */,
+				7993FB6722464D590053DF3C /* ProductVC.swift in Sources */,
+				7993FB6622464D420053DF3C /* ProductDetailVC.swift in Sources */,
+				7993FB62224648AC0053DF3C /* HomeVC.swift in Sources */,
+				7962FEDB2230CDAF00BFEE78 /* AdminHomeVC.swift in Sources */,
+				7993FB6322464CE50053DF3C /* RoundedViews.swift in Sources */,
 				7962FED92230CDAF00BFEE78 /* AppDelegate.swift in Sources */,
+				7993FB6422464CFA0053DF3C /* Constants.swift in Sources */,
 				79E84B962233CFD4003D3167 /* Category.swift in Sources */,
 				79E84B9A22341085003D3167 /* CategoryCell.swift in Sources */,
 				7934FDBE2234A34700D145DF /* ProductCell.swift in Sources */,
+				7993FB6522464CFF0053DF3C /* Extensions.swift in Sources */,
 				7934FDBA2234A25200D145DF /* Product.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
