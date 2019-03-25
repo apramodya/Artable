@@ -16,7 +16,7 @@ struct Product {
     var price: Double
     var productDescription: String
     var imageUrl: String
-    var timestamp: Timestamp
+    var timeStamp: Timestamp
     var stock: Int
     
     init(data: [String: Any]) {
@@ -27,6 +27,6 @@ struct Product {
         self.productDescription = data["productDescription"] as? String ?? ""
         self.imageUrl = data["imageUrl"] as? String ?? ""
         self.stock = data["isActive"] as? Int ?? 0
-        self.timestamp = data["timestamps"] as? Timestamp ?? Timestamp()
+        self.timeStamp = data["timestamps"] as? Timestamp ?? Timestamp()
     }
 }

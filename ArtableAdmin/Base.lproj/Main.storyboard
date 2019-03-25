@@ -92,6 +92,7 @@
                         <outlet property="loginLogoutBtn" destination="lpQ-lW-pmQ" id="ED4-ec-Tdg"/>
                         <outlet property="spinner" destination="mnX-Sl-mr4" id="KSI-bc-2m2"/>
                         <segue destination="Mao-JS-txq" kind="show" identifier="toAddEditCategory" id="1uQ-ug-KTF"/>
+                        <segue destination="Gzm-5z-xrs" kind="show" identifier="toProductsVC" id="I89-S3-vHa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rhv-W9-0aZ" sceneMemberID="firstResponder"/>
@@ -169,6 +170,7 @@
                         <viewLayoutGuide key="safeArea" id="CYa-ep-q9L"/>
                     </view>
                     <connections>
+                        <outlet property="addBtn" destination="oXe-3k-zXi" id="RGD-Cn-W2X"/>
                         <outlet property="categoryImg" destination="RKU-Wq-zCF" id="0Tt-1l-S7n"/>
                         <outlet property="indicator" destination="eCH-aN-gdD" id="Vya-sn-fmm"/>
                         <outlet property="nameTxt" destination="ht1-Fp-B2j" id="LTn-DC-wSf"/>
@@ -176,11 +178,68 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j9u-CG-YCQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1374" y="133"/>
+            <point key="canvasLocation" x="1695" y="133"/>
+        </scene>
+        <!--Admin ProductsVC-->
+        <scene sceneID="Qch-OX-Gs7">
+            <objects>
+                <viewController id="Gzm-5z-xrs" customClass="AdminProductsVC" customModule="ArtableAdmin" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6fL-YL-vV1">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" alpha="0.30000001192092896" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_cat3" translatesAutoresizingMaskIntoConstraints="NO" id="Nie-Ki-Len">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                            </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fX6-dY-ofM">
+                                <rect key="frame" x="2" y="64" width="371" height="603"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Nie-Ki-Len" firstAttribute="trailing" secondItem="6Vf-xc-Lht" secondAttribute="trailing" id="0EB-06-qPo"/>
+                            <constraint firstItem="fX6-dY-ofM" firstAttribute="top" secondItem="6Vf-xc-Lht" secondAttribute="top" id="DeR-y8-hzj"/>
+                            <constraint firstAttribute="bottom" secondItem="Nie-Ki-Len" secondAttribute="bottom" id="GDb-Gz-uHF"/>
+                            <constraint firstItem="Nie-Ki-Len" firstAttribute="top" secondItem="6Vf-xc-Lht" secondAttribute="top" id="I0j-gQ-Qcg"/>
+                            <constraint firstItem="Nie-Ki-Len" firstAttribute="leading" secondItem="6Vf-xc-Lht" secondAttribute="leading" id="mAY-Di-eyx"/>
+                            <constraint firstAttribute="bottom" secondItem="fX6-dY-ofM" secondAttribute="bottom" id="rU6-n2-yhQ"/>
+                            <constraint firstItem="6Vf-xc-Lht" firstAttribute="trailing" secondItem="fX6-dY-ofM" secondAttribute="trailing" constant="2" id="ujx-9h-cA2"/>
+                            <constraint firstItem="fX6-dY-ofM" firstAttribute="leading" secondItem="6Vf-xc-Lht" secondAttribute="leading" constant="2" id="ukj-tR-wC6"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Vf-xc-Lht"/>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="fX6-dY-ofM" id="gWQ-I6-F0b"/>
+                        <segue destination="YuG-Mf-Hjr" kind="show" identifier="toAddEditProduct" id="DXh-be-dSe"/>
+                        <segue destination="Mao-JS-txq" kind="show" identifier="toEditCategory" id="woy-I7-7hu"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="u8R-8c-UC9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="604" y="852"/>
+        </scene>
+        <!--Add Edit ProductsVC-->
+        <scene sceneID="C0a-G7-KRd">
+            <objects>
+                <viewController id="YuG-Mf-Hjr" customClass="AddEditProductsVC" customModule="ArtableAdmin" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Q4D-nr-6QE">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="jhd-rv-Oe5"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9dS-Rf-TtP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1647" y="851"/>
         </scene>
     </scenes>
     <resources>
         <image name="bg_cat3" width="1500" height="1875"/>
         <image name="camera" width="418.90908813476562" height="418.90908813476562"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="1uQ-ug-KTF"/>
+    </inferredMetricsTieBreakers>
 </document>

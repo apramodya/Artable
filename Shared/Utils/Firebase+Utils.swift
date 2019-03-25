@@ -11,11 +11,11 @@ import Firebase
 
 extension Firestore {
     var categories: Query {
-        return collection("categories").order(by: "timestamp", descending: true)
+        return collection("categories").order(by: "timeStamp", descending: true)
     }
     
     func products(category: Category) -> Query {
-        return collection("products").whereField("category", isEqualTo: category.id).order(by: "timestamp", descending: true)
+        return collection("products").whereField("category", isEqualTo: category.id).order(by: "timeStamp", descending: true)
     }
 }
 
