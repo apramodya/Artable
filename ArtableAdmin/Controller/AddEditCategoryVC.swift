@@ -44,7 +44,6 @@ class AddEditCategoryVC: UIViewController {
     }
     
     @IBAction func addCategoryClicked(_ sender: Any) {
-        indicator.startAnimating()
         uploadImageThenDocument()
     }
     
@@ -54,6 +53,8 @@ class AddEditCategoryVC: UIViewController {
                 simpleAlert(title: "Error", message: "Some fields are missing")
                 return
         }
+        
+        indicator.startAnimating()
         
         guard let imageData = image.jpegData(compressionQuality: 0.2) else { return}
         

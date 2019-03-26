@@ -22,9 +22,17 @@ class ProductCell: UITableViewCell {
 
     func configureCell(product: Product) {
         productTitle.text = product.name
-        productPrice.text = String(product.price)
+        
         if let url = URL(string: product.imageUrl) {
-            productImg.kf.setImage(with: url)
+            let placeholderImage = UIImage(named: "placeholder")
+            productImg.kf.indicatorType = .activity
+            productImg.kf.setImage(with: url, placeholder: placeholderImage, options: [.transition(.fade(0.2))])
+        }
+        
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .currency
+        if let price = formatter.string(from: product.price as NSNumber) {
+            productPrice.text = price
         }
         
     }
