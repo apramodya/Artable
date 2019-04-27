@@ -66,11 +66,7 @@ class RegisterVC: UIViewController {
 
         spinner.startAnimating()
         
-        guard let authUser = Auth.auth().currentUser else { return}
-        
-        let credentail = EmailAuthProvider.credential(withEmail: email, password: password)
-        authUser.linkAndRetrieveData(with: credentail) { (result, error) in
-            
+        Auth.auth().createUser(withEmail: email, password: password) { (result, error) in
             if let error = error {
                 Auth.auth().handleFireAuthError(error: error, vc: self)
                 debugPrint(error)
@@ -78,8 +74,41 @@ class RegisterVC: UIViewController {
                 return
             }
             
+            guard let firUser = result?.user else { return}
+            let artUser = User(id: firUser.uid, email: email, username: username, stripeId: "")
+            
+            self.createFireUser(user: artUser)
+        }
+        
+//        guard let authUser = Auth.auth().currentUser else { return}
+//
+//        let credentail = EmailAuthProvider.credential(withEmail: email, password: password)
+//        authUser.linkAndRetrieveData(with: credentail) { (result, error) in
+//
+//            if let error = error {
+//                Auth.auth().handleFireAuthError(error: error, vc: self)
+//                debugPrint(error)
+//                self.spinner.stopAnimating()
+//                return
+//            }
+//
+//            self.spinner.stopAnimating()
+//            self.dismiss(animated: true, completion: nil)
+//        }
+    }
+    
+    func createFireUser(user: User) {
+        let newUserRef = Firestore.firestore().collection("users").document(user.id)
+        let data = User.modelToData(user: user)
+        newUserRef.setData(data) { (error) in
+            if let error = error {
+                Auth.auth().handleFireAuthError(error: error, vc: self)
+                debugPrint(error)
+            } else {
+                self.dismiss(animated: true, completion: nil)
+            }
             self.spinner.stopAnimating()
-            self.dismiss(animated: true, completion: nil)
+            return
         }
     }
 }
