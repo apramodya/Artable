@@ -127,6 +127,10 @@ class HomeVC: UIViewController {
             }
         }
     }
+    
+    @IBAction func favoritesClicked(_ sender: Any) {
+        performSegue(withIdentifier: Segues.ToFavorites, sender: self)
+    }
 }
 
 extension HomeVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
@@ -187,6 +191,11 @@ extension HomeVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollec
         if segue.identifier == Segues.ToProducts {
             if let destination = segue.destination as? ProductVC {
                 destination.category = selectedCategory
+            }
+        } else if segue.identifier == Segues.ToFavorites {
+            if let destination = segue.destination as? ProductVC {
+                destination.category = selectedCategory
+                destination.showFavorites = true
             }
         }
     }

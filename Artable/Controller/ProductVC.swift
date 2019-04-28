@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class ProductVC: UIViewController {
+class ProductVC: UIViewController, ProductCellDelegate {
 
     @IBOutlet weak var tableView: UITableView!
 
@@ -17,6 +17,7 @@ class ProductVC: UIViewController {
     var category: Category!
     var db: Firestore!
     var listner: ListenerRegistration!
+    var showFavorites: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,7 +37,14 @@ class ProductVC: UIViewController {
     }
     
     func setProductsListner() {
-        listner = db.products(category: category).addSnapshotListener({ (snap, error) in
+        var ref: Query!
+        if showFavorites {
+            ref = db.collection("users").document((userService.user?.id)!).collection("favorites")
+        } else {
+            ref = db.products(category: category)
+        }
+        
+        listner = ref.addSnapshotListener({ (snap, error) in
             if let error = error {
                 debugPrint(error.localizedDescription)
                 return
@@ -56,6 +64,12 @@ class ProductVC: UIViewController {
                 }
             })
         })
+    }
+    
+    func productFavorited(product: Product) {
+        userService.favoriteSelected(product: product)
+        guard let index = products.firstIndex(of: product) else { return}
+        tableView.reloadRows(at: [IndexPath(row: index, section: 0)], with: .automatic)
     }
     
     func setupTableView() {
@@ -99,7 +113,7 @@ extension ProductVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         if let cell = tableView.dequeueReusableCell(withIdentifier: Identifiers.productCell, for: indexPath) as? ProductCell {
-            cell.configureCell(product: products[indexPath.row])
+            cell.configureCell(product: products[indexPath.row], delegate: self)
             return cell
         }
         
