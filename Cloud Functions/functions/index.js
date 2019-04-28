@@ -1,8 +1,14 @@
 const functions = require('firebase-functions');
+const admin = require('firebase-admin');
 
-// // Create and Deploy Your First Cloud Functions
-// // https://firebase.google.com/docs/functions/write-firebase-functions
-//
-// exports.helloWorld = functions.https.onRequest((request, response) => {
-//  response.send("Hello from Firebase!");
-// });
+admin.initializeApp();
+
+const stripe = require("stripe")(functions.config().stripe.secret_test_key);
+
+exports.createStripeCustomer = functions.firestore.document('users/{userId}').onCreate(async (snap, context) => {
+   const data = snap.data();
+   const email = data.email;
+
+   const customer = await stripe.customers.create({ email: email});
+   return admin.firestore().collection('users').doc(data.id).update({ stripeId: customer.id});
+});
