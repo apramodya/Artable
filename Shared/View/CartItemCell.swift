@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class CartItemCell: UITableViewCell {
 
@@ -20,10 +21,18 @@ class CartItemCell: UITableViewCell {
         // Initialization code
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    func configureCell(item: Product) {
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .currency
+        
+        if let price = formatter.string(from: item.price as NSNumber) {
+            productTitleLbl.text = "\(item.name) \(price)"
+        }
+        
+        if let url = URL(string: item.imageUrl) {
+            productImg.kf.setImage(with: url)
+        }
+        
     }
     
     @IBAction func removeItemClicked(_ sender: Any) {

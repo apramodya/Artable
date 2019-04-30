@@ -24,7 +24,9 @@ class CheckoutVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.register(UINib(nibName: Identifiers.cartItemCell, bundle: nil), forCellReuseIdentifier: Identifiers.cartItemCell)
     }
 
     @IBAction func placeOrderClicked(_ sender: Any) {
@@ -32,5 +34,26 @@ class CheckoutVC: UIViewController {
     @IBAction func paymentMethodClicked(_ sender: Any) {
     }
     @IBAction func shippingMethodClicked(_ sender: Any) {
+    }
+}
+
+extension CheckoutVC: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return StripeCart.cartItems.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if let cell = tableView.dequeueReusableCell(withIdentifier: Identifiers.cartItemCell, for: indexPath) as? CartItemCell {
+            let product = StripeCart.cartItems[indexPath.row]
+            cell.configureCell(item: product)
+            
+            return cell
+        }
+        
+        return UITableViewCell()
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 90
     }
 }
