@@ -23,6 +23,7 @@
 		793C3AF3227614FD009A9DE2 /* CartItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793C3AF1227614FD009A9DE2 /* CartItemCell.swift */; };
 		793C3AF4227614FD009A9DE2 /* CartItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 793C3AF2227614FD009A9DE2 /* CartItemCell.xib */; };
 		793C3AF522761510009A9DE2 /* CartItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793C3AF1227614FD009A9DE2 /* CartItemCell.swift */; };
+		793CE41F227800A400BC2C72 /* StripeCart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793CE41E227800A400BC2C72 /* StripeCart.swift */; };
 		794F6490227440F400B89746 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794F648F227440F400B89746 /* UserService.swift */; };
 		79611551223391F200BC6AE6 /* ForgotPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7961154F223391F200BC6AE6 /* ForgotPasswordVC.swift */; };
 		79611552223391F200BC6AE6 /* ForgotPasswordVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79611550223391F200BC6AE6 /* ForgotPasswordVC.xib */; };
@@ -77,6 +78,7 @@
 		793A797622469F8000FF7F76 /* AddEditCategoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEditCategoryVC.swift; sourceTree = "<group>"; };
 		793C3AF1227614FD009A9DE2 /* CartItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartItemCell.swift; sourceTree = "<group>"; };
 		793C3AF2227614FD009A9DE2 /* CartItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CartItemCell.xib; sourceTree = "<group>"; };
+		793CE41E227800A400BC2C72 /* StripeCart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StripeCart.swift; sourceTree = "<group>"; };
 		794F648F227440F400B89746 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		7961154F223391F200BC6AE6 /* ForgotPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordVC.swift; sourceTree = "<group>"; };
 		79611550223391F200BC6AE6 /* ForgotPasswordVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ForgotPasswordVC.xib; sourceTree = "<group>"; };
@@ -169,6 +171,14 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		793CE41D2278007E00BC2C72 /* Stripe */ = {
+			isa = PBXGroup;
+			children = (
+				793CE41E227800A400BC2C72 /* StripeCart.swift */,
+			);
+			path = Stripe;
+			sourceTree = "<group>";
+		};
 		794F648E227440DA00B89746 /* Services */ = {
 			isa = PBXGroup;
 			children = (
@@ -211,6 +221,7 @@
 		7962FEBF2230CD9300BFEE78 /* Artable */ = {
 			isa = PBXGroup;
 			children = (
+				793CE41D2278007E00BC2C72 /* Stripe */,
 				794F648E227440DA00B89746 /* Services */,
 				7961154E223391D000BC6AE6 /* XIBs */,
 				79D3F6652231769A008B89C5 /* View */,
@@ -589,6 +600,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				793CE41F227800A400BC2C72 /* StripeCart.swift in Sources */,
 				7934FDB72234A1B900D145DF /* ProductVC.swift in Sources */,
 				7993FB60224637390053DF3C /* ProductDetailVC.swift in Sources */,
 				79E84B922233BE15003D3167 /* Firebase+Utils.swift in Sources */,
