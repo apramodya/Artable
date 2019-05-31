@@ -158,13 +158,13 @@ extension CheckoutVC: STPPaymentContextDelegate {
         let title: String
         let message: String
         
+        spinner.stopAnimating()
+
         switch status {
         case .error:
-            spinner.stopAnimating()
             title = "Error"
             message = error?.localizedDescription ?? ""
         case .success:
-            spinner.stopAnimating()
             title = "Success"
             message = "Thanks for your purchase"
         case .userCancellation:

@@ -129,6 +129,11 @@ class HomeVC: UIViewController {
     }
     
     @IBAction func favoritesClicked(_ sender: Any) {
+        if userService.isGuest {
+            self.simpleAlert(title: "Hello", message: "Please register for this feature")
+            return
+        }
+        
         performSegue(withIdentifier: Segues.ToFavorites, sender: self)
     }
 }

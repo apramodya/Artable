@@ -48,6 +48,11 @@ class ProductDetailVC: UIViewController {
     }
 
     @IBAction func addCartClicked(_ sender: Any) {
+        if userService.isGuest {
+            self.simpleAlert(title: "Hello", message: "Please register for this feature")
+            return
+        }
+        
         StripeCart.addItemToCart(item: product)
         dismiss(animated: true, completion: nil)
     }

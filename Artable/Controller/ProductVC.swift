@@ -74,12 +74,22 @@ class ProductVC: UIViewController, ProductCellDelegate {
     
     // ProductCellDelegate methods
     func productFavorited(product: Product) {
+        if userService.isGuest {
+            self.simpleAlert(title: "Hello", message: "Please register for this feature")
+            return
+        }
+        
         userService.favoriteSelected(product: product)
         guard let index = products.firstIndex(of: product) else { return}
         tableView.reloadRows(at: [IndexPath(row: index, section: 0)], with: .automatic)
     }
     
     func productAddedToCart(product: Product) {
+        if userService.isGuest {
+            self.simpleAlert(title: "Hello", message: "Please register for this feature")
+            return
+        }
+        
         StripeCart.addItemToCart(item: product)
     }
 }
