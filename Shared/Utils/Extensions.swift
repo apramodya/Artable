@@ -23,3 +23,17 @@ extension UIViewController {
         present(alert, animated: true, completion: nil)
     }
 }
+
+extension Int {
+    func centsToFormattedCurrency() -> String {
+        let unit = Double(self) / 100
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .currency
+        
+        if let unitString = formatter.string(from: unit as NSNumber) {
+            return unitString
+        }
+        
+        return formatter.string(from: 0 as NSNumber)!
+    }
+}

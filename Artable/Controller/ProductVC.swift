@@ -66,16 +66,21 @@ class ProductVC: UIViewController, ProductCellDelegate {
         })
     }
     
+    func setupTableView() {
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.register(UINib(nibName: Identifiers.productCell, bundle: nil), forCellReuseIdentifier: Identifiers.productCell)
+    }
+    
+    // ProductCellDelegate methods
     func productFavorited(product: Product) {
         userService.favoriteSelected(product: product)
         guard let index = products.firstIndex(of: product) else { return}
         tableView.reloadRows(at: [IndexPath(row: index, section: 0)], with: .automatic)
     }
     
-    func setupTableView() {
-        tableView.delegate = self
-        tableView.dataSource = self
-        tableView.register(UINib(nibName: Identifiers.productCell, bundle: nil), forCellReuseIdentifier: Identifiers.productCell)
+    func productAddedToCart(product: Product) {
+        StripeCart.addItemToCart(item: product)
     }
 }
 
